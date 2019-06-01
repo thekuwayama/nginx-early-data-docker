@@ -16,7 +16,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 
 # openssl
-ARG openssl_version="1.1.1b"
+ARG openssl_version="1.1.1c"
 
 RUN mkdir -p /build/openssl
 RUN curl -s https://www.openssl.org/source/openssl-${openssl_version}.tar.gz | tar -C /build/openssl -xzf - && \
