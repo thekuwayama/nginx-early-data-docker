@@ -1,32 +1,8 @@
-FROM ubuntu:18.04
+FROM thekuwayama/openssl:1.1.1g
 
+ARG openssl_version="1.1.1g"
 RUN apt-get update && apt-get install -y --no-install-recommends \
-        autoconf \
-        bison \
-        build-essential \
-        ca-certificates \
-        curl \
-        gzip \
-        libreadline-dev \
-        patch \
-        pkg-config \
-        sed \
-        zlib1g-dev \
         libpcre3-dev
-
-
-# openssl
-ARG openssl_version="1.1.1c"
-
-RUN mkdir -p /build/openssl
-RUN curl -s https://www.openssl.org/source/openssl-${openssl_version}.tar.gz | tar -C /build/openssl -xzf - && \
-        cd /build/openssl/openssl-${openssl_version} && \
-        ./Configure \
-        --prefix=/opt/openssl/openssl-${openssl_version} \
-        enable-crypto-mdebug enable-crypto-mdebug-backtrace \
-        linux-x86_64 && \
-        make && make install_sw
-
 
 # nginx
 ARG nginx_version="1.15.12"
