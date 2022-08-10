@@ -5,7 +5,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         libpcre3-dev
 
 # nginx
-ARG nginx_version="1.15.12"
+ARG nginx_version="1.22.0"
 
 RUN mkdir -p /build/nginx
 
