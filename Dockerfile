@@ -1,6 +1,6 @@
-FROM thekuwayama/openssl:1.1.1g
+FROM thekuwayama/openssl:1.1.1q
 
-ARG openssl_version="1.1.1g"
+ARG openssl_version="1.1.1q"
 RUN apt-get update && apt-get install -y --no-install-recommends \
         libpcre3-dev
 
